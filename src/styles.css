@@ -1,0 +1,7 @@
+.form-control {
+    border-radius: 0px !important;
+}
+.btn:hover {
+    background-color: white !im;
+    border: red;
+}

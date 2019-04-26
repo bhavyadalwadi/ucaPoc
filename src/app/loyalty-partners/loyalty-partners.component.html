@@ -1,0 +1,50 @@
+<div class="row">
+<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-9">
+    <div class="update-msg invisible" id="update-msg" aria-live="polite">
+      <span class="update-success-image" aria-hidden="true">✓</span>
+      <span class="ml10">You have successfully linked your Alaska Airlines Mileage Plan.</span>
+    </div>
+  <div class="">
+    <h1 class="hidden-xs">Loyalty Partners</h1>
+    <div id="errorMsg" class="help-block with-errors text-left" aria-live="polite"></div>
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+      <img src="/assets/images/alaska-airline-logo.png" class="" alt="alaska-airline-logo">
+    </div>
+    <p>Link your Alaska Airlines Mileage Plan Number and start earning miles when you purchase eligible items in Alaska stores.</p>
+  </div>
+  <form data-toggle="validator" role="form" id="AAM-form" onchange="AB.VALIDATION.validateLoyaltyParternersForm('enrollBtn')" novalidate="true">
+    <div class="row form-group">
+      <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-4">
+      <label class="mb8" for="alaska-airline-number">Alaska Airlines Mileage Plan Number</label>
+      <input class="form-control" autocomplete="off" type="text" aria-hidden="false" required="required" data-required-error="Alaska Airlines Mileage Plan number is required." aria-describedby="invalied-aapNumber" aria-invalid="true" id="alaska-airline-number" pattern="^[0-9]*$" onfocus="AB.VALIDATION.clearErrorMessage(this.id);" data-pattern-error="The Mileage Plan number for Alaska Airlines must contain numeric characters only." onkeypress="return event.charCode >= 48 &amp;&amp; event.charCode <= 57" name="alaska-airline-number" placeholder="" maxlength="12">
+      <div id="invalied-aapNumber" class="help-block with-errors text-left p0" aria-live="polite"></div>
+      <input type="hidden" name="oldAANumber" id="oldAANumber" value="" maxlength="12">
+      </div>
+    </div>
+    <div class="title-text" id="enroll">
+      <p class="terms">You must accept the <a target="_blank" href="https://www-qa2-origin.tomthumb.com/account/rewards-loyalty-partners-tc.html">Terms &amp; Conditions</a> to enroll in the program.</p>
+      <div class="row">
+        <div class="col-6 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+            <input type="radio" name="terms-radio" value="accept" id="loyaltyAcceptRadioBtn">
+            <span class="m0">Accept</span>
+        </div>
+        <div class="col-6 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+            <input type="radio" name="terms-radio" value="decline" id="loyaltyDeclineRadioBtn" checked="checked">
+            <span class="m0">Decline</span>
+        </div>
+      </div>
+    </div>
+    <div class="title-text hidden" id="enrolled">
+      <span>Enrollment Date:</span>
+      <span id="enrolled-date">Mar,27,2018</span>
+      <p class="mb24 terms">Call Customer Care at 1-877-723-3929 for further assistance.</p>
+      <p class="terms">View <a href="https://www-qa2-origin.tomthumb.com/account/rewards-loyalty-partners-tc.html">Terms &amp; Conditions</a></p>
+    </div>
+    <div class="row">
+      <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+        <button type="submit" class="form-control btn btn-danger" id="enrollBtn" onclick="AB.UCASERVICES.updateLoyalty(); return false;" data-enrolled-update="UPDATE">ENROLL NOW</button>
+      </div>
+    </div> 
+  </form>
+</div>
+</div>

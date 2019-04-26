@@ -1,0 +1,64 @@
+            <div class="row">
+                <div class="mt24 update-msg invisible" id="update-msg" aria-live="polite">
+                    <span class="update-success-image" aria-hidden="true">✓</span><span class="ml10">You have successfully updated your preferences. Updates will take effect within 24 hours.</span>
+                </div>
+            </div>
+            <div>
+                <h1 class="hidden-xs">Communication Preferences</h1>
+                <h5 class="">Email</h5>
+                <div class="row"> <span class="email-txt" id="emailId">password1992@gmail.com</span>
+                    <span class="visible-xs"><br></span>
+                    <span class="hidden-xs"></span> <span class=""><a href="/account/account-settings.html" class="red"><u>Update Email Address</u></a></span>
+                </div>
+                <div class="">
+                    <p>Just select the email communications you'd like to receive, and we'll send the news you won't want to miss.</p>
+    
+                </div>
+                <span class="form-group comm-pref-subs-list-js">
+                    <div class="checkBox">
+                        <input id="cb-J4U" name="cb-J4U" checked="" type="checkbox" onclick="AB.COMMUNICATIONPREF_V2.enableUpdBtnCheckBox()">
+                        <label for="cb-J4U">just for U (personalized price, special promos &amp; more)</label>
+                        <label for="cb-J4U" class="checkmark"></label>
+                    </div>
+                
+                    <div class="checkBox">
+                        <input id="cb-EmailSave" name="cb-EmailSave" checked="" type="checkbox" onclick="AB.COMMUNICATIONPREF_V2.enableUpdBtnCheckBox()">
+                        <label for="cb-EmailSave">Weekly Specials (Weekly Ad savings, recipes &amp; wellness news)</label>
+                        <label for="cb-EmailSave" class="checkmark"></label>
+                    </div>
+                
+                    <div class="checkBox">
+                        <input id="cb-GroceryDel" name="cb-GroceryDel" checked="" type="checkbox" onclick="AB.COMMUNICATIONPREF_V2.enableUpdBtnCheckBox()">
+                        <label for="cb-GroceryDel">Online Shopping - Delivery and Drive Up &amp; Go (Exclusive offers, recipes and more)</label>
+                        <label for="cb-GroceryDel" class="checkmark"></label>
+                    </div>
+                
+                    <div class="checkBox">
+                        <input id="cb-ProdRecall" name="cb-ProdRecall" checked="" type="checkbox" onclick="AB.COMMUNICATIONPREF_V2.enableUpdBtnCheckBox()">
+                        <label for="cb-ProdRecall">just for U Recall (Receive applicable Class I product recalls)</label>
+                        <label for="cb-ProdRecall" class="checkmark"></label>
+                    </div>
+                </span>
+                <template id="subscription-checkbox-tmpl" class="hide">
+                    <div class="checkBox">
+                        <input id="{{id}}" name="{{id}}" type="checkbox" onclick="AB.COMMUNICATIONPREF_V2.enableUpdBtnCheckBox()">
+                        <label for="{{id}}">{{subscriptionLabel}}</label>
+                        <label for="{{id}}" class="checkmark"></label>
+                    </div>
+                </template>
+                <hr>
+                <div class="no-padding col-md-12 col-sm-12 col-xs-12 comm-info">
+                    <div class="checkBox">
+                        <input id="cb-unsubscribe-all" name="cb-unsubscribe-all" type="checkbox" onclick="AB.COMMUNICATIONPREF_V2.enableUpdBtnCheckBox('all')">
+                        <label for="cb-unsubscribe-all">I want to unsubscribe from all Tom Thumb Email communications.</label>
+                        <label for="cb-unsubscribe-all" class="checkmark"></label>
+                    </div>
+                    <div class="disclaimer-txt mb24">
+                        <p><b>Please Note: </b>It may take up to 10 business days to be unsubscribed and no longer receive emails. When you unsubscribe, it applies to newsletters and promotional emails only. You will continue to receive required program confirmation and mandatory account notifications.</p>
+    
+                    </div>
+                    <div class="mb24 no-padding col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <button type="submit" class="btn btn-danger" id="updateBtn" onclick="AB.COMMUNICATIONPREF_V2.commPrefSubmit();">UPDATE</button>
+                    </div>
+                </div>
+            </div>

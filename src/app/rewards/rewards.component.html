@@ -1,0 +1,47 @@
+<h2 class="rewards-title">Rewards</h2>
+<!-- Row for the Savings to date and Lifatime Savings -->
+<div class="row">
+  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+    <h3 class="savings-lifetime-text"> <p class="savings-lifetime-text">2018 Savings to Date:</p></h3>
+    <p id="ytd-savings">$0.00</p>
+  </div>
+  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+    <h3 class="savings-lifetime-text"> <p class="savings-lifetime-text">Lifetime Savings:</p></h3>
+    <p id="life-savings">$0.00</p>
+  </div>
+</div>
+<!-- Row for the  Rewards Box-->
+<div class="row rewards-box">
+  <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+      <h3 class="rewards-summ-title">Rewards Summary</h3>
+  </div>
+  <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 col-xl-3 font-reward-box">
+      <div class="col-xs-6 col-sm-12 col-md-12 col-lg-12 col-xl-12 rewards-lbl-adjust">
+          <p class="points">Points Towards<br role="presentation">Next Reward</p>
+      </div>
+      <div class="col-xs-6 col-sm-12 col-md-12 col-lg-12 col-xl-12 rewards-number-adjust">
+        <span class="bottom-align-text" id="rewards-avail">0</span>
+      </div>
+      <hr class="hidden-sm hidden-md hidden-lg" aria-hidden="true">
+  </div>
+  <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 col-xl-3 font-reward-box">
+      <div class="col-xs-6 col-sm-12 col-md-12 col-lg-12 col-xl-12 rewards-lbl-adjust">
+          <p class="points">Rewards<br role="presentation">Balance</p>
+      </div>
+      <div class="col-xs-6 col-sm-12 col-md-12 col-lg-12 col-xl-12 rewards-number-adjust">
+        <span class="bottom-align-text" id="rewards-balance">0</span>
+      </div>
+      <hr class="hidden-sm hidden-md hidden-lg" aria-hidden="true">
+  </div>
+  <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 col-xl-3 font-reward-box">
+      <div class="col-xs-6 col-sm-12 col-md-12 col-lg-12 col-xl-12 rewards-exp-adjust">
+          <p class="points">Expiring<br role="presentation">Rewards</p>
+      </div>
+      <div class="col-xs-6 col-sm-12 col-md-12 col-lg-12 col-xl-12 rewards-number-adjust rewards-exp-paddingr-adjust">
+          <span class="bottom-align-text" id="expiring-rewards">0</span>
+      </div>
+  </div>
+</div>
+<div class="uca-use-my-rewards">
+    <button id="useMyRewardsId" (click)="useMyRewards()" class="btn btn-danger">USE MY REWARDS</button>
+</div>

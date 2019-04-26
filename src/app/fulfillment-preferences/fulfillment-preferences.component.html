@@ -1,0 +1,70 @@
+<div class="fulfillment-pref section">
+
+    <div class="acc-page-fulfillment">
+        <form data-toggle="validator" role="form" name="updatephonenumber" method="PATCH" id="updatephonenumber" onsubmit="AB.UCAFULFILLMENTPREFERENCE.validatephonenumber(); return false;" data-fulfillmentpreflink="/content/www/tomthumb/en/account/fulfillment-preferences" novalidate="true">
+            <input type="hidden" name="oldPhone" id="oldPhone" value="">
+            <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-9 main-wrap-fulfillment p0">
+                <!--<div class="update-msg" id="update-success">xfgfd
+                    <div class="update-success-image" id = "tick">errore</div>
+                    <div class="ml10" id="success-message">rwewe</div>
+                </div>-->
+                <div id="errorMsg" class="help-block with-errors text-left" aria-live="polite"></div>
+                <div class="mt24 update-msg" id="update-msg" aria-live="polite">
+                    <span class="update-success-image" aria-hidden="true">✓</span><span class="ml10">You have successfully updated your details.</span>
+                    <!--
+                        <img class="fl" src="../assets/common/images/profileIcons/update.png">
+                             <h5> You have successfully updated your preferences. Updates will take effect within 24 hours.</h5> -->
+                </div>
+    
+                <div class="title-text mb80 p0">
+    
+                    <h1 class="fulfillment-text hidden-xs mt40 mb24">Fulfillment Preferences</h1>
+                    <h2 class="subtitle-text mb16">Delivery Address</h2>
+    
+                    <div class="row mb32">
+                        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 mb8" id="deliveryaddress" data-errormsg="To add a delivery address, click &quot;Add An Address&quot;">1206 Jungle Dr  <br>Duncanville TX 75116</div>
+                        <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
+                            <a onclick="AB.UCAFULFILLMENTPREFERENCE.updateAddress('/content/www/tomthumb/en/account/update-zip-code','edit_delivery_address')" class="mt16"><u class="red">Update Address</u></a>
+                        </div>
+                    </div>
+    
+                    <h2 class="subtitle-text mb16">Drive up &amp; Go</h2>
+    
+                    <div class="row mb32">
+                        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 mb8" id="dugStore" data-errormsg="To add a store, Click &quot;Select a New Store&quot;">TomThumb (Pick Up) 5809 E Lovers Ln<br>Dallas TX 75206</div>
+                        <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
+                            <a onclick="AB.UCAFULFILLMENTPREFERENCE.updateAddress('/content/www/tomthumb/en/account/update-delivery-preferences','edit_dug_store')" class="mt16"><u class="red">Select A New Store</u></a>
+                        </div>
+                    </div>
+    
+            <div id="deliveryPhoneDiv" style="">
+                    <h2 class="subtitle-text mb24">Contact Phone Number</h2>
+    
+                    <div class="row">
+                        <div class="form-group mb24 col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                            <label class="pull-left" for="deliveryPhoneNumber">Phone Number</label>
+                            <input type="tel" required="required" class="form-control m0 contact-number" id="deliveryPhoneNumber" name="phone" data-required-error="Phone Number is required" aria-describedby="invalied-phone" placeholder="Phone Number" data-minlength="10" data-minlength-error="Phone Number must be at least 10 digits." data-phoneccpattern="^[ 0-9 -]*$" onfocus="AB.VALIDATION.clearErrorMessage(this.id);" onkeypress="return event.charCode >= 48 &amp;&amp; event.charCode <= 57" onkeyup="AB.VALIDATION.enableFulfillmentPreferenceButton(this.id,'updatePhoneBtn')" data-pattern-error="Please enter a valid Phone Number." maxlength="10">
+                            <p id="invalied-phone" class="help-block with-errors text-left" aria-live="polite"></p>
+                        </div>
+                    </div>
+    
+                    <div class="row mb48">
+                        <div class="col-lg-4 col-md-4 col-xl-4 col-sm-4 col-xs-12">
+                            
+                            <input type="hidden" name="emailId" id="emailId" value="password1992@gmail.com">
+                            <p id="signInLoadingEmpty"></p>
+                            <div id="loaderSignIn" class="loading-div-tiny mask">
+                                <img src="/etc/designs/wcax-commons/images/icons/busy.gif" role="presentation">
+                            </div>
+                            <button type="submit" class="btn btn-default disabled" id="updatePhoneBtn">
+                                UPDATE
+                            </button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    
+    <div class="clearfix"></div></div>

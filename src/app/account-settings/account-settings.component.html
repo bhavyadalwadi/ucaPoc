@@ -1,0 +1,202 @@
+    <div class="p0 relative col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-9 main-wrap-acc">
+        <div class="update-msg d-none" id="update-success" aria-live="polite">
+            <span class="update-success-image" aria-hidden="true">✓</span>
+            <span class="ml10">You have successfully updated your changes.</span>
+        </div>
+        <div class="update-msg d-none" id="update-phone-success" aria-live="polite">
+            <span class="update-success-image" aria-hidden="true">✓</span>
+            <span class="ml10">You have successfully updated your phone number.</span>
+        </div>
+        <div class="row title-text">
+            <h2 class="acc-settings-text hidden-xs mt40">Account Settings</h2>
+        </div>
+        <div id="updateErrorMsg" class="help-block with-errors text-left" aria-live="polite"></div>
+        <input type="hidden" id="email-confirmation-path" value="/content/www/tomthumb/en/account/email-address-change-confirmed.html"/>
+
+        <form data-toggle="validator" novalidate="true" role="form" id="acc-form">
+            <div class="mask d-none">
+                <input type="text" id="emailIdvalidate" name="emailIdvalidate" value="" required="required" data-required-error="Email is required">
+                <div class="help-block with-errors" aria-live="polite"></div>
+            </div>
+            <fieldset>
+                <legend>Personal Information</legend>
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="form-group" id="firstn">
+                            <label for="input-firstName">First Name</label>
+                            <input class="form-control" autocomplete="off" maxlength="30" type="text" aria-hidden="false" 
+                                required="required" aria-invalid="true" id="input-firstName" name="input-firstName" 
+                                aria-describedby="error-fname" data-firstnameminchars="2" 
+                                onkeyup="AB.VALIDATION.enableUpdPersonalInfoBtn('update-personal-info-Btn','error-fname','error-lname','error-email');" 
+                                data-firstnamepattern="^[a-zA-Z][ a-zA-Z-]*$" onfocus="AB.VALIDATION.clearErrorMessage(this.id);" 
+                                data-required-error="First Name is Required">
+                            <div class="help-block with-errors" id="error-fname" aria-live="polite"></div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="form-group" id="lastn">
+                            <label for="input-lastName">Last Name</label>
+                            <input class="form-control" autocomplete="off" maxlength="30" type="text" aria-hidden="false" 
+                            required="required" id="input-lastName" name="input-lastName" 
+                            onkeyup="AB.VALIDATION.enableUpdPersonalInfoBtn('update-personal-info-Btn','error-fname','error-lname','error-email');" 
+                            aria-describedby="error-lname" data-required-error="Last Name is required" onfocus="AB.VALIDATION.clearErrorMessage(this.id);"
+                            data-lastnameminchars="2" data-lastnamepattern="^[a-zA-Z]*$">
+                            <div class="help-block with-errors" id="error-lname" aria-live="polite"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class=" col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="form-group" id="emailIddivaccount">
+                            <label for="emailIdaccount" class="pull-left">Email</label>
+                            <span id="emailProgressIcon" class="loading-div-tiny mask d-none">
+                                <img src="/assets/images/busy.gif" role="presentation">
+                            </span>
+                            <input type="email" class="form-control" id="emailIdaccount" aria-describedby="error-email" placeholder="" 
+                            pattern="[[a-z0-9._%+-]+@[a-z0-9A-Z.-]+\.[a-z]{2,9}$" onkeyup="AB.VALIDATION.enableUpdPersonalInfoBtn('update-personal-info-Btn','error-fname','error-lname','error-email')" 
+                            required="required" data-error="Please enter a valid email address." data-required-error="Email id is required" onfocus="AB.VALIDATION.clearErrorMessage(this.id);">
+                            <div class="help-block with-errors" id="error-email" aria-live="polite"></div>
+                        </div>
+                    </div>    
+                </div>
+                <div class="row">
+                    <div class="title-text  col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <p id="signInLoadingEmpty"></p>
+                        <div id="loaderSignIn" class="loading-div-tiny mask d-none">
+                            <img src="/assets/images/busy.gif" role="presentation">
+                        </div>
+                        <button type="submit" class="btn btn-danger" id="update-personal-info-Btn" onclick="AB.UCASERVICES.updateProfile(); return false;">UPDATE</button>
+                    </div>
+                </div>
+                <hr>
+            </fieldset>
+        </form>
+        <!--/* END of AEM UCA Personal-Info Component*/ -->
+    </div>
+<div class="change-password section"><!-- /* START of AEM UCA Change-Password Component */ -->
+<input type="hidden" id="password-confirmation-path" value="/content/www/tomthumb/en/account/account-password-change-confirmed.html">
+<form data-toggle="validator" novalidate="true" role="form" id="pws-form">
+<fieldset>
+<legend>Change your Password</legend>
+<div class="main-wrap-acc">
+<div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-9 pad0">
+        <div id="passwordUpdateErrorMsg" class="help-block with-errors text-left server-msg-handler" aria-live="polite"></div>
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <div class=" relative form-group" id="chpswd">
+                <label class="pull-left" for="c-password">Current Password</label>
+                <input type="password" class="form-control" id="c-password" placeholder="" required="required" data-required-error="Current Password is required" maxlength="12" aria-describedby="pwd-info error-c-pwd" data-address1zippwdminlength="8" data-validpwdpattern="" onclick="$('#pwd-info').show()" oninput="AB.VALIDATION.enableDisabledInputField(this.id,'n-password')" onfocus="AB.VALIDATION.slideDown('pwd-info');AB.VALIDATION.clearErrorMessage(this.id);" onblur="AB.VALIDATION.slideUp('pwd-info');">
+                <a href="#" class="show" id="cpShow" onclick="AB.VALIDATION.showHide(event, 'c-password', this.id);" tabindex="0" aria-label="Show password" aria-disabled="true" role="button">Show</a>
+                <div class="help-block with-errors text-left" id="error-c-pwd" aria-live="polite"></div>
+            </div>
+        </div>
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+            <div class=" relative form-group" id="pswd">
+                <label class="pull-left" for="n-password">New Password</label>
+                <input type="password" class="form-control" id="n-password" placeholder="" required="required" data-required-error="New Password is required" maxlength="12" aria-describedby="pwd-info error-n-pwd" onfocus="AB.VALIDATION.slideDown('pwd-info');AB.VALIDATION.clearErrorMessage(this.id);" onblur="AB.VALIDATION.slideUp('pwd-info');" onkeyup="AB.VALIDATION.enablePwdBtn('c-password',this.id,'update-password-Btn');" data-address1zippwdminlength="8" data-validpwdpattern="" disabled="disabled">
+                <a href="#" class="show" id="npShow" onclick="AB.VALIDATION.showHide(event, 'n-password', this.id);" tabindex="0" aria-label="Show password" aria-disabled="true" role="button">Show</a>
+                <div class="help-block with-errors text-left" id="error-n-pwd" aria-live="polite"></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+        
+<ul id="pwd-info" class="passwordMessage" style="display:none;">
+    <li>Password must be 8-12 characters long.</li>
+    <li>Must not be the same as your email address, first name, or last name.</li>
+    <li>Passwords cannot contain only repeating characters e.g. hhhhhhhh</li>
+    <li>The new password cannot be same as the existing or last password.</li>
+</ul>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-9 pad0">
+        <div class="title-text  col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
+            <p id="signInLoadingEmptyUpdatePassword"></p>
+            <div id="loaderSignInUpdatePassword" class="loading-div-tiny mask d-none">
+                <img src="/assets/images/busy.gif" role="presentation">
+            </div>
+            <button type="submit" class="btn btn-danger" id="update-password-Btn" onclick="AB.UCASERVICES.updatePassword(); return false;">UPDATE</button>
+        </div>
+    </div>
+</div>
+<hr>
+</div>
+</fieldset>
+</form>
+<!-- /* END of AEM UCA Change-Password Component */ -->
+</div>
+<div class="phone-number section">
+<form class="mb40 main-wrap-acc" data-toggle="validator" novalidate="true" role="form" id="tel-form">
+<div class="mask d-none">
+<input type="text" id="pOrCcValidate" name="pOrCcValidate" value="" required="required" data-required-error="Phone number is required">
+<div class="help-block with-errors" aria-live="polite"></div>
+</div>
+<fieldset>
+<legend>Number Given In Store</legend>
+<div class="row">
+<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-9 pad0 ">
+<div id="phoneUpdateErrorMsg" class="help-block with-errors text-left server-msg-handler" aria-live="polite"></div>
+    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12">
+        <div class="form-group m0" id="account-phone">
+            <label class="pull-left" for="phoneNumber"><p>Phone Number</p>
+</label>
+                <span id="phoneProgressIcon" class="loading-div-tiny mask d-none">
+                        <img src="/assets/images/busy.gif" role="presentation">
+                </span> 
+                <span onclick="AB.ARIA.phoneInfoModalShow('phoneInfo');" tabindex="0" aria-label="Phone number info" role="button" id="ucaPhoneInfoModalbtn">
+                        <img class="info-Phone-img info-icon" src="/assets/images/info.png" alt="" role="presentation">
+                                    </span>
+
+            <input type="text" required="required" class="form-control" id="phoneNumber" data-required-error="Phone Number is required" value="" aria-describedby="invalied-phone" maxlength="10" placeholder="Phone Number" data-phoneccminlength="10" data-phoneccpattern="^[ 0-9 -]*$" onfocus="AB.VALIDATION.clearErrorMessage(this.id);" onkeyup="AB.VALIDATION.enableUpdPhoneNoBtn('update-phone-Btn', true);" onkeypress="return event.charCode >= 48 &amp;&amp; event.charCode <= 57" pattern="[0-9]*">
+            <p id="invalied-phone" class="help-block with-errors text-left" aria-live="polite"></p>
+        </div>
+    </div>
+<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+    <label class="pull-left" for="phoneNumber">Club Card Number</label>
+</div>
+<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+    <p class="pull-left" id="cc-number">49121129469</p>
+</div>
+</div>
+<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-9 p0">
+<div class="title-text  col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+    <p class="need-help-text mt8 mb32">Need help? Call customer support at 1-877-258-2799.</p>
+</div>
+<div class="title-text  col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
+    <p id="signInLoadingEmptyUpdatePhone"></p>
+    <div id="loaderSignInUpdatePhone" class="loading-div-tiny mask d-none">
+        <img src="/assets/images/busy.gif" role="presentation">
+    </div>
+    <button type="submit" class="btn btn-danger" id="update-phone-Btn" onclick="AB.UCASERVICES.updatePhone(); return false;">UPDATE</button>
+</div>
+</div>
+</div>
+</fieldset>
+</form>
+<div id="phoneInfo" class="modal fade" aria-labelledby="phoneInfoText" role="dialog" aria-describedby="phoneInfoModalText">
+<div class="vertical-alignment-helper">
+<div class="modal-dialog vertical-align-center" role="document">
+<div class="modal-content">
+    <button onclick="AB.VALIDATION.resetPhoneInfoModalFocus();" id="phoneInfoModalBtn" data-dismiss="modal" class="create-modal-close-icon modal-refocus modal-heading" tabindex="0" aria-label="Phone number given in store dialogue close">
+        <span class="svg-icon svg-icon-Close"></span>
+    </button>
+    <span id="phoneInfoModalText modal-heading"><p id="phoneInfoModal1">Number Given In Store</p>
+<p>You may have previously given a phone number that is used for your Safeway Club Card. This number allows us to access your previous purchase history for faster re-ordering.</p>
+<p>Phone Number</p>
+<p>Phone Number is a number specifically used for online shopping to assist with grocery delivery or in-store pick up. This number may be the same as the phone number you provided in store.</p>
+</span>
+    <div class="row">
+        <div class="col-md-9 col-lg-9 col-xl-9"></div>
+        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
+            <button onclick="AB.VALIDATION.resetPhoneInfoModalFocus();" data-dismiss="modal" class="btn btn-danger btn-modal modal-row primarybutton" tabindex="0" id="doneBtn">DONE</button>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
