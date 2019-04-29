@@ -1,20 +1,22 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>UcaPoc</title>
-  <base href="/">
-  <script src="main.js"></script>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>UcaPoc</title>
+    <base href="/">
+    <link rel="stylesheet" href="https://www-qa2-origin.tomthumb.com/etc.clientlibs/wcax-commons/clientlibs/clientlib-header/shop-tomthumb.min.css"> <!--Step 1-->
+    <script src="https://www-qa2-origin.tomthumb.com/etc.clientlibs/wcax-commons/clientlibs/clientlib-onload.min.js"></script> <!--Step 2-->
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-</head>
-<body>
-  <!-- Will inject AEM header making ajax call from main.js file -->
-  <button type="button" onclick="loadDoc()">Change Content</button>
-  <div id="cncAEMHeader"></div>
-  <!-- <app-root></app-root> -->
-  <!-- Will inject AEM footer making ajax call from main.js file -->
-  <div id="cncAEMFooter"></div>
-</body>
+    <script src="assets/scripts/main.js"></script>
+  </head>
+  <body onload="_loadHeader(); _loadFooter();">
+    <!-- Will inject AEM header making ajax call from main.js file -->
+    <div id="cncAEMHeader"></div> <!--Step 5-->
+    <!-- <app-root></app-root> -->
+    <!-- Will inject AEM footer making ajax call from main.js file -->
+    <div id="cncAEMFooter"></div> <!--Step 6-->
+    <script src="https://www-qa2-origin.tomthumb.com/etc.clientlibs/wcax-commons/clientlibs/clientlib-angular.min.js"></script> <!--Step 7-->
+    <script src="https://www-qa2-origin.tomthumb.com/etc.clientlibs/wcax-commons/clientlibs/shop-tomthumb.min.js"></script><!--Step 8-->
+  </body>
 </html>
