@@ -5,12 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>UcaPoc</title>
     <base href="/">
+    <script src="assets/scripts/main.js"></script>
     <link rel="stylesheet" href="https://www-qa2-origin.tomthumb.com/etc.clientlibs/wcax-commons/clientlibs/clientlib-header/shop-tomthumb.min.css"> <!--Step 1-->
     <script src="https://www-qa2-origin.tomthumb.com/etc.clientlibs/wcax-commons/clientlibs/clientlib-onload.min.js"></script> <!--Step 2-->
-
-    <script src="assets/scripts/main.js"></script>
   </head>
-  <body onload="_loadHeader(); _loadFooter();">
+  <body onload="_getHeaderAndFooter();">
     <!-- Will inject AEM header making ajax call from main.js file -->
     <div id="cncAEMHeader"></div> <!--Step 5-->
     <!-- <app-root></app-root> -->
